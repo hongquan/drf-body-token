@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "drf-body-token"
+version = "0.1.0"
+description = "REST authentication class to get token from HTTP body"
+authors = ["Nguyễn Hồng Quân <ng.hong.quan@gmail.com>"]
+license = "MIT"
+readme = "README.rst"
+repository = "https://github.com/hongquan/drf-body-token.git"
+keywords = ["django", "rest", "token"]
+
+[tool.poetry.dependencies]
+python = "^3.5"
+djangorestframework = "^3.8"
+Django = "^2.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^3.0"
+pytest-django = "^3.4"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
