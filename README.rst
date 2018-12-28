@@ -3,7 +3,7 @@ DRF Body Token
 ==============
 
 Provide a `Django REST Framework <https://www.django-rest-framework.org>`_ authentication class, to look for token
-in HTTP body, instead of HTTP header.
+in HTTP request's body, instead of HTTP header.
 
 This use case is uncommon and may be less secure,
 but some REST client application doesn't let customize HTTP header,
@@ -18,7 +18,7 @@ Install
 
     pip3 install drf-body-token
 
-`DRF Body Token` only supports Python 3.5+
+`DRF Body Token` only supports Python 3.5+.
 
 Usage
 -----
@@ -35,7 +35,16 @@ Example:
 
 You can also add it to ``REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES']`` settings, to make it available for every viewset.
 
-By default, ``BodyTokenAuthentication`` looks for ``acess_token`` field in HTTP body.
+By default, ``BodyTokenAuthentication`` looks for ``access_token`` field in request's body. That body can be, for example:
+
+.. code-block:: json
+
+    {
+        "name": "Cuckoo",
+        "type": "bird",
+        "access_token": "Vừng ơi mở ra"
+    }
+
 If you want it to look for another field, add this to your `settings.py` file:
 
 .. code-block:: python
